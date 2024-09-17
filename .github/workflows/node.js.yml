@@ -58,6 +58,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.Pipeline_Token }}
 
       - name: Download a single artifact
         uses: actions/download-artifact@v3
@@ -74,15 +76,8 @@ jobs:
           # files=$(find $SRC_FOLDER_PATH -type f) # get the file list
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
-
-          echo 'git fetch...'
           git fetch                         # fetch branches
-
-          echo 'git checkout...'
           git checkout $TARGET_BRANCH       # checkout to your branch
-
-          echo 'list files on filesystem...'
-          ls -alt
 
           echo 'remove files from current docs...'
           rm -rf docs/
