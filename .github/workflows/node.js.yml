@@ -54,7 +54,7 @@ jobs:
 
   copy:
     needs: Build
-    name: Copy my folder
+    name: Copy docs folder to deploy branch
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -65,10 +65,6 @@ jobs:
           name: docs
           path: |
             docs
-            
-      - shell: bash
-        run: |
-          ls -alt
 
       - name: copy
         env:
@@ -81,7 +77,7 @@ jobs:
           git remote update
           git fetch                         # fetch branches
           git checkout $TARGET_BRANCH       # checkout to your branch
-          ls -alt
+          ls -alt docs/
           git checkout ${GITHUB_REF##*/} -- $files # copy files from the source branch
           git add -A
           git diff-index --quiet HEAD ||  git commit -am "deploy files"  # commit to the repository (ignore if no modification)
