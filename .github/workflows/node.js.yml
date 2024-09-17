@@ -93,9 +93,9 @@ jobs:
           mv artifact-docs docs
           
           ls -alt 
-          
-          # echo 'git add...'
-          # git add -A docs/*
+
+          echo 'git add...'
+          git add -A
           
           # echo 'git diff-index  and git commit -am commands...'
           # git diff-index --quiet HEAD ||  git commit -am "deploy files"  # commit to the repository (ignore if no modification)
