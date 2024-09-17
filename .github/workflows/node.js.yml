@@ -85,11 +85,15 @@ jobs:
           ls -alt
 
           echo 'remove files from current docs...'
-          rm -r /docs/*
+          rm -rf docs/
 
-          echo 'copy files from artifacts-docs to docs...'
-          cp -R artifact-docs/. docs/
-                    
+          ls -alt
+
+          echo 'rename artifacts-docs to docs...'
+          mv artifact-docs docs
+          
+          ls -alt 
+          
           # echo 'git add...'
           # git add -A docs/*
           
