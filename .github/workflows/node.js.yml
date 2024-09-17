@@ -77,9 +77,19 @@ jobs:
           git remote update
           git fetch                         # fetch branches
           git checkout $TARGET_BRANCH       # checkout to your branch
+          
+          echo 'docs listing:'
           ls -alt docs/
+          
+          echo 'use git checkout to copy files...'
           git checkout ${GITHUB_REF##*/} -- $files # copy files from the source branch
+          
+          echo 'git add -A...'
           git add -A
+          
+          echo 'git diff-index  and git commit -am commands...'
           git diff-index --quiet HEAD ||  git commit -am "deploy files"  # commit to the repository (ignore if no modification)
+          
+          echo 'git push command...'
           git push origin $TARGET_BRANCH # push to remote branch
           
