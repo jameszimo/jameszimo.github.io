@@ -63,6 +63,8 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: dist
+          path: |
+            dist
             
       - shell: bash
         run: |
