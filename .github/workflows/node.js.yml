@@ -74,12 +74,15 @@ jobs:
           files=$(find $SRC_FOLDER_PATH -type f) # get the file list
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
-          git remote update
-          git fetch                         # fetch branches
-          git checkout $TARGET_BRANCH       # checkout to your branch
           
-          echo 'docs listing:'
-          ls -alt docs/
+          echo 'git remote update...'
+          git remote update
+
+          echo 'git fetch...'
+          git fetch                         # fetch branches
+
+          echo 'git checkout...'
+          git checkout $TARGET_BRANCH       # checkout to your branch
           
           echo 'use git checkout to copy files...'
           git checkout ${GITHUB_REF##*/} -- $files # copy files from the source branch
