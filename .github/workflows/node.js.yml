@@ -7,7 +7,9 @@ on:
     branches: [ "main" ]
 
 jobs:
+  
   Test:
+    name: Test
     runs-on: ubuntu-latest
     steps:
     
@@ -25,6 +27,8 @@ jobs:
         npm run test-cloud
 
   Build:
+    name: Build
+    needs: Test
     runs-on: ubuntu-latest
     steps:
     
