@@ -27,13 +27,13 @@ describe('SourceControlComponent', () => {
 
   it('should show a gitHub repo URL', () => {
     expect(compiled.querySelector('#source-control-url').textContent).toEqual(
-        'https://github.com/jameszimo/resume-angular'
+        'https://github.com/jameszimo/jameszimo.github.io'
     );
   });
 
   it('should have a link to a GitHub Repo', () => {
     const gitHubUrl = compiled.querySelector('.gitHub').querySelector('a').href
-    expect(gitHubUrl).toEqual('https://github.com/jameszimo/resume-angular');
+    expect(gitHubUrl).toEqual('https://github.com/jameszimo/jameszimo.github.io');
   });
 
   it('should have the GitHub logo', () => {
