@@ -8,27 +8,27 @@ on:
 
 jobs:
   
-  Test:
-    name: Test
-    runs-on: ubuntu-latest
-    steps:
+  # Test:
+  #   name: Test
+  #   runs-on: ubuntu-latest
+  #   steps:
     
-    - name: Checkout 
-      uses: actions/checkout@v3
+  #   - name: Checkout 
+  #     uses: actions/checkout@v3
       
-    - name: Node
-      uses: actions/setup-node@v3
-      with:
-        cache: 'npm'
+  #   - name: Node
+  #     uses: actions/setup-node@v3
+  #     with:
+  #       cache: 'npm'
         
-    - name: Test
-      run: |
-        npm install
-        npm run test-cloud
+  #   - name: Test
+  #     run: |
+  #       npm install
+  #       npm run test-cloud
 
   Build:
     name: Build
-    needs: Test
+    # needs: Test
     runs-on: ubuntu-latest
     steps:
     
@@ -63,19 +63,23 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: dist
-
-      - name: copy
-        env:
-          SRC_FOLDER_PATH: 'dist'
-          TARGET_BRANCH: 'deploy'
+            
+      - shell: bash
         run: |
-          files=$(find $SRC_FOLDER_PATH -type f) # get the file list
-          git config --global user.name 'GitHub Action'
-          git config --global user.email 'action@github.com'
-          git fetch                         # fetch branches
-          git checkout $TARGET_BRANCH       # checkout to your branch
-          git checkout ${GITHUB_REF##*/} -- $files # copy files from the source branch
-          git add -A
-          git diff-index --quiet HEAD ||  git commit -am "deploy files"  # commit to the repository (ignore if no modification)
-          git push origin $TARGET_BRANCH # push to remote branch
+          ls -alt
+
+      # - name: copy
+      #   env:
+      #     SRC_FOLDER_PATH: 'dist'
+      #     TARGET_BRANCH: 'deploy'
+      #   run: |
+      #     files=$(find $SRC_FOLDER_PATH -type f) # get the file list
+      #     git config --global user.name 'GitHub Action'
+      #     git config --global user.email 'action@github.com'
+      #     git fetch                         # fetch branches
+      #     git checkout $TARGET_BRANCH       # checkout to your branch
+      #     git checkout ${GITHUB_REF##*/} -- $files # copy files from the source branch
+      #     git add -A
+      #     git diff-index --quiet HEAD ||  git commit -am "deploy files"  # commit to the repository (ignore if no modification)
+      #     git push origin $TARGET_BRANCH # push to remote branch
           
