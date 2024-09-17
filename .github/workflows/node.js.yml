@@ -48,9 +48,9 @@ jobs:
     - name: Archive production artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: dist
+        name: docs
         path: |
-          dist
+          docs
 
   copy:
     needs: Build
@@ -62,9 +62,9 @@ jobs:
       - name: Download a single artifact
         uses: actions/download-artifact@v3
         with:
-          name: dist
+          name: docs
           path: |
-            dist
+            docs
             
       - shell: bash
         run: |
@@ -72,12 +72,13 @@ jobs:
 
       - name: copy
         env:
-          SRC_FOLDER_PATH: 'dist'
+          SRC_FOLDER_PATH: 'docs'
           TARGET_BRANCH: 'deploy'
         run: |
           files=$(find $SRC_FOLDER_PATH -type f) # get the file list
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
+          git remote update
           git fetch                         # fetch branches
           git checkout $TARGET_BRANCH       # checkout to your branch
           git checkout ${GITHUB_REF##*/} -- $files # copy files from the source branch
