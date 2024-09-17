@@ -81,8 +81,8 @@ jobs:
           echo 'git checkout...'
           git checkout $TARGET_BRANCH       # checkout to your branch
           
-          # echo 'use git checkout to copy files...'
-          # git checkout ${GITHUB_REF##*/} -- $files # copy files from the source branch
+          echo 'use git checkout to copy files...'
+          git checkout ${GITHUB_REF##*/} -- $files # copy files from the source branch
           
           # echo 'git add...'
           # git add -A
