@@ -64,14 +64,14 @@ jobs:
         with:
           name: docs
           path: |
-            docs
+            artifact-docs
 
       - name: copy
         env:
           SRC_FOLDER_PATH: 'docs'
           TARGET_BRANCH: 'deploy'
         run: |
-          files=$(find $SRC_FOLDER_PATH -type f) # get the file list
+          # files=$(find $SRC_FOLDER_PATH -type f) # get the file list
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
 
@@ -80,9 +80,12 @@ jobs:
 
           echo 'git checkout...'
           git checkout $TARGET_BRANCH       # checkout to your branch
+
+          echo 'list files on filesystem...'
+          ls -alt
           
-          echo 'use git checkout to copy files...'
-          git checkout ${GITHUB_REF##*/} -- $files # copy files from the source branch
+          # echo 'use git checkout to copy files...'
+          # git checkout ${GITHUB_REF##*/} -- $files # copy files from the source branch
           
           # echo 'git add...'
           # git add -A
