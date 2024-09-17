@@ -14,11 +14,12 @@ jobs:
     steps:
     
     - name: Checkout 
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       
     - name: Node
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
+        node-version: 20
         cache: 'npm'
         
     - name: Test
@@ -33,11 +34,12 @@ jobs:
     steps:
     
     - name: Checkout 
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       
     - name: Node
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
+        node-version: 20
         cache: 'npm'
         
     - name: Build
@@ -57,7 +59,7 @@ jobs:
     name: Copy docs folder to deploy branch
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           token: ${{ secrets.Pipeline_Token }}
 
