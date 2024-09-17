@@ -73,16 +73,17 @@ jobs:
           SRC_FOLDER_PATH: 'docs'
           TARGET_BRANCH: 'deploy'
         run: |
-          # files=$(find $SRC_FOLDER_PATH -type f) # get the file list
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
-          git fetch                         # fetch branches
-          git checkout $TARGET_BRANCH       # checkout to your branch
+          
+          echo 'git fetch and git checkout...'
+          git fetch
+          git checkout $TARGET_BRANCH
 
           echo 'remove files from current docs...'
           rm -rf docs/
 
-          echo 'rename artifacts-docs to docs...'
+          echo 'rename artifacts-docs (from build job) to docs...'
           mv artifact-docs docs
 
           echo 'git add...'
