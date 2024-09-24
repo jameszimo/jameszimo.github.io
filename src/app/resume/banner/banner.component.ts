@@ -14,6 +14,8 @@ export class BannerComponent implements OnInit {
   @Input() phone: string = "";
   @Input() email: string = "";
   @Input() jobTitle: string = "";
+  
+  public isLightTheme = true;
 
   constructor(private viewportService: ViewportService) {
   }
@@ -24,5 +26,15 @@ export class BannerComponent implements OnInit {
 
   isDisplayed(): boolean {
     return this.viewportSizeClass !== BreakpointNames.XSmall;
+  }
+
+
+  onThemeSwitchChange() {
+    this.isLightTheme = !this.isLightTheme;
+
+    document.body.setAttribute(
+      'data-theme',
+      this.isLightTheme ? 'light' : 'dark'
+    );
   }
 }
