@@ -13,7 +13,7 @@ body {
 }
 
 a, a:link, a:visited, a:hover, a:active {
-  color: darkslateblue;
+  color: var(--main-content-link-color) !important;
   text-decoration: none;
 }
 

@@ -1,16 +1,14 @@
 
-
-
-
-
 [data-theme="light"] {
 
     --main-content-background-color: #ffffff;
     --main-content-text-color: #231f20;
+    --main-content-link-color: #483d8b;
 }
 
 [data-theme="dark"] {
 
-    --main-content-background-color: #231f20;
-    --main-content-text-color: #ffffff;
+    --main-content-background-color: #263746;
+    --main-content-text-color: #d3d3d3;
+    --main-content-link-color: #08aa3e;
 }
