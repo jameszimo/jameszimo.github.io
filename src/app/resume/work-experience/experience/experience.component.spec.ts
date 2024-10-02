@@ -1,4 +1,4 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {fakeAsync, ComponentFixture, TestBed} from '@angular/core/testing';
 import {ExperienceComponent} from './experience.component';
 
 describe('ExperienceComponent', () => {
@@ -6,7 +6,7 @@ describe('ExperienceComponent', () => {
   let fixture: ComponentFixture<ExperienceComponent>;
   let compile: any;
 
-  beforeEach(async(() => {
+  beforeEach(fakeAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ExperienceComponent]
     })
