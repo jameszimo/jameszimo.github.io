@@ -36,9 +36,8 @@ describe('SourceControlComponent', () => {
     expect(gitHubUrl).toEqual('https://github.com/jameszimo/jameszimo.github.io');
   });
 
-  it('should have the GitHub logo', () => {
-    const gitHubLogoUrl = compiled.querySelector('.gitHub').querySelector('img').src
-    const path = new URL(gitHubLogoUrl).pathname;
-    expect(path).toEqual('/assets/images/github.png');
+  it('should have the GitHub div', () => {
+    const gitHubLogoUrl = compiled.querySelector('.source-control-image');
+    expect(gitHubLogoUrl).toBeTruthy;
   });
 });

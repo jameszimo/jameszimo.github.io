@@ -7,3 +7,24 @@
 .gitHub-image {
   height: 25px;
 }
+
+.source-control-image {
+  height: 25px;
+  width: 25px;
+  margin: auto;
+  clear: both;
+  background-image: url(../../../assets/images/github-mark.png);
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .source-control-image {
+    background-image: url(../../../assets/images/github-mark-white.png);
+
+  }
+}
+
+#source-control-url {
+  padding: 10px;
+}
