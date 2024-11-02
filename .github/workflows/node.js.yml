@@ -29,7 +29,6 @@ jobs:
 
   Build:
     name: Build
-    needs: Test
     runs-on: ubuntu-latest
     steps:
     
@@ -55,7 +54,7 @@ jobs:
           docs
 
   copy:
-    needs: Build
+    needs: [Test, Build]
     name: Deploy
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
