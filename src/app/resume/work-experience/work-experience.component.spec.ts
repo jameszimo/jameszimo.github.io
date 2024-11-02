@@ -17,33 +17,37 @@ describe('WorkExperienceComponent', () => {
   const latestExperience: WorkExperience = {
     company: 'Nuclear Power Plant',
     city: 'SpringField',
-    dateRange: '2004 - 2009',
+    startYear: '2004',
+    endYear: '2009',
     title: 'job',
-    description: 'hello',
+    description: ['hello'],
     companyLink: 'link'
   };
   const earliestExperience: WorkExperience = {
     company: 'McDuff',
     city: 'SpringField',
-    dateRange: '1989 - 2004',
+    startYear: '1989',
+    endYear: '2004',
     title: 'job',
-    description: 'hello',
+    description: ['hello'],
     companyLink: 'link'
   };
   const earlyMiddleExperience: WorkExperience = {
     company: 'Other',
     city: 'SpringField',
-    dateRange: '1989 - 2004',
+    startYear: '1989',
+    endYear: '2004',
     title: 'job',
-    description: 'hello',
+    description: ['hello'],
     companyLink: 'link'
   };
   const laterMiddleExperience: WorkExperience = {
     company: 'Other',
     city: 'SpringField',
-    dateRange: '1989 - 2009',
+    startYear: '1989',
+    endYear: '1989',
     title: 'job',
-    description: 'hello',
+    description: ['hello'],
     companyLink: 'link'
   };
 

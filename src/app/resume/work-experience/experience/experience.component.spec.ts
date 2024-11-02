@@ -18,12 +18,15 @@ describe('ExperienceComponent', () => {
     component = fixture.componentInstance;
     component.company = 'Springfield Nuclear Power Plant';
     component.city = 'Springfield';
-    component.dateRange = '1989 - Present';
+    component.startYear = '1989';
+    component.endYear = 'Present';
     component.title = 'Nuclear Safety Inspector';
-    component.description = 'Strengthened safety procedures that resulted in 75% fewer accidents on days I was absent|' +
-      'Pioneered workplace stress-reduction methods that worked for at least one employee|' +
-      'Sat around|' +
-      'Consumed many doughnuts|';
+    component.description = [
+      'Strengthened safety procedures that resulted in 75% fewer accidents on days I was absent',
+      'Pioneered workplace stress-reduction methods that worked for at least one employee',
+      'Sat around',
+      'Consumed many doughnuts'
+    ];
     fixture.detectChanges();
     compile = fixture.nativeElement;
   });
@@ -55,7 +58,7 @@ describe('ExperienceComponent', () => {
   it('should display correct job description', () => {
     const jobDescription = compile.querySelector('.experience-description').textContent;
 
-    component.description.split('|').forEach((item) => {
+    component.description.forEach((item) => {
       expect(jobDescription).toContain('•' + item);
     });
 

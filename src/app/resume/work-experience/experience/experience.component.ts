@@ -11,8 +11,10 @@ export class ExperienceComponent implements OnInit {
   @Input() company: string = "";
   @Input() city: string = "";
   @Input() dateRange: string = "";
+  @Input() startYear: string = "";
+  @Input() endYear: string = "";
   @Input() title: string = "";
-  @Input() description: string = "";
+  @Input() description: string[] = [];
   @Input() companyLink: string = "";
 
   constructor() {
@@ -22,7 +24,6 @@ export class ExperienceComponent implements OnInit {
   }
 
   getJobDescription(): string[] {
-    return this.description.split('|');
+    return this.description;
   }
-
 }

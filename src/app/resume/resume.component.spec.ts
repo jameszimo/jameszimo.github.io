@@ -28,9 +28,10 @@ describe('ResumeComponent', () => {
   const workExperience: WorkExperience = {
     company: 'McDuff',
     city: 'SpringField',
-    dateRange: '1989 - 2004',
+    startYear: '1989',
+    endYear: '2004',
     title: 'job',
-    description: 'hello',
+    description: ['hello'],
     companyLink: 'link'
   };
 
