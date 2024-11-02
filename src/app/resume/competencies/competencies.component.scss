@@ -12,12 +12,27 @@
   justify-content: space-between;
 }
 
+@media (prefers-color-scheme: dark) {
+  .competencies-wrapper a, a:link, a:visited, a:hover, a:active {
+    color: $offWhite;
+    text-decoration: none;
+  }
+}
+
 a.competencies-competency {
   border-radius: 8px;
   background-color: whitesmoke;
   padding: 10px;
   margin: 4px;
   flex-grow: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  a.competencies-competency {
+    background-color: white;
+    background: rgba(255, 255, 255, 0.1);
+    
+  }
 }
 
 .competency-parent {
