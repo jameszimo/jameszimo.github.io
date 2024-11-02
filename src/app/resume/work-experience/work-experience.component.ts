@@ -24,7 +24,7 @@ export class WorkExperienceComponent implements OnInit {
   getWorkExperience(): WorkExperience[] {
     return this.allWorkExperience
       .sort(
-        (a, b) => a.dateRange > b.dateRange ? -1 : a.dateRange < b.dateRange ? 1 : 0
+        (a, b) => a.startYear > b.startYear ? -1 : a.startYear < b.startYear ? 1 : 0
       );
   }
 }
