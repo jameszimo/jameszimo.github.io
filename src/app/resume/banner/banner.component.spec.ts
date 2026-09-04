@@ -2,18 +2,20 @@ import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {BannerComponent} from './banner.component';
 import {MatIconModule} from '@angular/material/icon';
 import {BreakpointNames, ViewportService} from '../../service/viewport.service';
-import {of} from 'rxjs';
+import {BehaviorSubject} from 'rxjs';
 
 describe('BannerComponent', () => {
   let component: BannerComponent;
   let fixture: ComponentFixture<BannerComponent>;
   let compiled: any;
   let mockViewportService: any;
+  let viewportSubject: BehaviorSubject<string>;
 
   beforeEach(async () => {
 
+    viewportSubject = new BehaviorSubject<string>(BreakpointNames.Medium);
     mockViewportService = {
-      getViewportClass: jasmine.createSpy('getViewportClass').and.returnValue(of(BreakpointNames.Medium))
+      getViewportClass: jasmine.createSpy('getViewportClass').and.returnValue(viewportSubject.asObservable())
     };
 
     await TestBed.configureTestingModule({
@@ -37,7 +39,6 @@ describe('BannerComponent', () => {
     component.phone = '555-555-5555';
     component.email = 'john.smith@email.com';
     component.jobTitle = 'Job Title';
-    component.viewportSizeClass = '';
     fixture.detectChanges();
     compiled = fixture.nativeElement;
   });
@@ -57,8 +58,7 @@ describe('BannerComponent', () => {
     });
 
     it('should hide the banner portrait when the viewport size is XSmall', () => {
-
-      component.viewportSizeClass = BreakpointNames.XSmall;
+      viewportSubject.next(BreakpointNames.XSmall);
       fixture.detectChanges();
       compiled = fixture.nativeElement;
 

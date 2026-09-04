@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
 import {BreakpointNames, ViewportService} from '../../service/viewport.service';
 
 @Component({
@@ -16,14 +16,17 @@ export class BannerComponent implements OnInit {
   @Input() email: string = "";
   @Input() jobTitle: string = "";
 
-  constructor(private viewportService: ViewportService) {
+  constructor(private viewportService: ViewportService, private cdr: ChangeDetectorRef) {
   }
 
   ngOnInit(): void {
-    this.viewportService.getViewportClass().subscribe(result => this.viewportSizeClass = result);
+    this.viewportService.getViewportClass().subscribe(result => {
+      this.viewportSizeClass = result;
+      this.cdr.markForCheck();
+    });
   }
 
-  isDisplayed(): boolean {
+  get isDisplayed(): boolean {
     return this.viewportSizeClass !== BreakpointNames.XSmall;
   }
 }
