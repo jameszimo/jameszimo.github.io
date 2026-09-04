@@ -2,7 +2,7 @@
   <mat-icon [ngClass]="viewportSizeClass" id="education-icon" class="section-icon" aria-hidden="false" aria-label="Education Icon">school</mat-icon>
   <div class="section-details">
     <div class="section-title" id="education-title">{{ educationTitle.toUpperCase() }}</div>
-    <ng-container *ngFor="let education of getEducation()">
+    @for (education of getEducation(); track education) {
       <div class="education-row">
         <div class="education-row-bullet-point">•</div>
         <div class="education-content-degree">
@@ -12,6 +12,6 @@
           {{ education.state }}
         </div>
       </div>
-    </ng-container>
+    }
   </div>
 </div>

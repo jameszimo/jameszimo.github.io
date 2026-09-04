@@ -1,7 +1,9 @@
 <div class="banner-container">
-  <div *ngIf="isDisplayed()" class="banner-portrait-container">
-    <img alt="portrait" class="banner-portrait" src="../../../assets/images/james.jpg"/>
-  </div>
+  @if (isDisplayed()) {
+    <div class="banner-portrait-container">
+      <img alt="portrait" class="banner-portrait" src="../../../assets/images/james.jpg"/>
+    </div>
+  }
   <div [ngClass]="viewportSizeClass" class="banner-person-details">
     <div class="banner-name" id="resume-name">{{ firstName + " " + lastName}}</div>
     <div class="banner-job-title">{{ jobTitle }}</div>
