@@ -3,9 +3,10 @@ import {Education} from '../domain/education';
 import {ViewportService} from '../../service/viewport.service';
 
 @Component({
-  selector: 'education',
-  templateUrl: './education.component.html',
-  styleUrls: ['./education.component.scss']
+    selector: 'education',
+    templateUrl: './education.component.html',
+    styleUrls: ['./education.component.scss'],
+    standalone: false
 })
 export class EducationComponent implements OnInit {
 

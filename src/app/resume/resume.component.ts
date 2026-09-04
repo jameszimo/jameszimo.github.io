@@ -4,9 +4,10 @@ import {Person} from './domain/person';
 import {ViewportService} from '../service/viewport.service';
 
 @Component({
-  selector: 'resume',
-  templateUrl: './resume.component.html',
-  styleUrls: ['./resume.component.scss']
+    selector: 'resume',
+    templateUrl: './resume.component.html',
+    styleUrls: ['./resume.component.scss'],
+    standalone: false
 })
 export class ResumeComponent implements OnInit {
 

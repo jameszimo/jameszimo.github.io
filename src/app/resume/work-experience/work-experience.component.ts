@@ -3,9 +3,10 @@ import {WorkExperience} from '../domain/work-experience';
 import {ViewportService} from '../../service/viewport.service';
 
 @Component({
-  selector: 'work-experience',
-  templateUrl: './work-experience.component.html',
-  styleUrls: ['./work-experience.component.scss']
+    selector: 'work-experience',
+    templateUrl: './work-experience.component.html',
+    styleUrls: ['./work-experience.component.scss'],
+    standalone: false
 })
 export class WorkExperienceComponent implements OnInit {
 

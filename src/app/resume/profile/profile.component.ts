@@ -2,9 +2,10 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ViewportService} from '../../service/viewport.service';
 
 @Component({
-  selector: 'profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+    selector: 'profile',
+    templateUrl: './profile.component.html',
+    styleUrls: ['./profile.component.scss'],
+    standalone: false
 })
 export class ProfileComponent implements OnInit {
 

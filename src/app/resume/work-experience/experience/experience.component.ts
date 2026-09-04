@@ -1,9 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'experience',
-  templateUrl: './experience.component.html',
-  styleUrls: ['./experience.component.scss']
+    selector: 'experience',
+    templateUrl: './experience.component.html',
+    styleUrls: ['./experience.component.scss'],
+    standalone: false
 })
 export class ExperienceComponent implements OnInit {
 

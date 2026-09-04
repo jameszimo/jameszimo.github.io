@@ -3,9 +3,10 @@ import {Competency} from '../domain/competency';
 import {ViewportService} from '../../service/viewport.service';
 
 @Component({
-  selector: 'competencies',
-  templateUrl: './competencies.component.html',
-  styleUrls: ['./competencies.component.scss']
+    selector: 'competencies',
+    templateUrl: './competencies.component.html',
+    styleUrls: ['./competencies.component.scss'],
+    standalone: false
 })
 export class CompetenciesComponent implements OnInit {
 
