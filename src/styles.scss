@@ -1,9 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-$steel: #263746;
-$offWhite: #dcdcdc;
-$border-color: #FFFFFF;
-$row-spacing: 2px;
+@use 'src/variables' as vars;
 
 html, body {
   height: 100%;
@@ -27,7 +24,7 @@ html, body {
 @media (prefers-color-scheme: dark) {
   body {
       background-color: rgb(39, 39, 39);
-      color: $offWhite;
+      color: vars.$offWhite;
   }
 
     a, a:link, a:visited, a:hover, a:active {

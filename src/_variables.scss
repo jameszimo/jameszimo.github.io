@@ -1,0 +1,8 @@
+// Shared SCSS variables. Import into components with:
+//   @use 'src/variables' as vars;
+// and reference as vars.$steel, vars.$offWhite, etc.
+
+$steel: #263746;
+$offWhite: #dcdcdc;
+$border-color: #FFFFFF;
+$row-spacing: 2px;

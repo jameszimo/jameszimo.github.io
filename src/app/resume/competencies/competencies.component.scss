@@ -1,4 +1,4 @@
-@import 'src/styles';
+@use 'src/variables' as vars;
 
 .competencies-container {
   display: flex;
@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   .competencies-wrapper a, a:link, a:visited, a:hover, a:active {
-    color: $offWhite;
+    color: vars.$offWhite;
     text-decoration: none;
   }
 }

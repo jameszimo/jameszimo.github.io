@@ -1,4 +1,4 @@
-@import 'src/styles';
+@use 'src/variables' as vars;
 
 .education-container {
   display: flex;
@@ -6,8 +6,8 @@
 }
 
 .education-row {
-  padding-top: $row-spacing;
-  padding-bottom: $row-spacing;
+  padding-top: vars.$row-spacing;
+  padding-bottom: vars.$row-spacing;
   margin-left: 20px;
   display: flex;
   flex-direction: row;
