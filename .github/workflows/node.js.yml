@@ -14,12 +14,12 @@ jobs:
     steps:
     
     - name: Checkout 
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
       
     - name: Node
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v7
       with:
-        node-version: 20
+        node-version: 24
         cache: 'npm'
         
     - name: Test
@@ -33,12 +33,12 @@ jobs:
     steps:
     
     - name: Checkout 
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
       
     - name: Node
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v7
       with:
-        node-version: 20
+        node-version: 24
         cache: 'npm'
         
     - name: Build
@@ -47,7 +47,7 @@ jobs:
         npm run build
     
     - name: Archive production artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: docs
         path: |
@@ -59,12 +59,12 @@ jobs:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           token: ${{ secrets.Pipeline_Token }}
 
       - name: Download a single artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: docs
           path: |
