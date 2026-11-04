@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ChangeDetectionStrategy} from '@angular/core';
 import {WorkExperience} from '../domain/work-experience';
 import {ViewportService} from '../../service/viewport.service';
 
@@ -6,6 +6,7 @@ import {ViewportService} from '../../service/viewport.service';
     selector: 'work-experience',
     templateUrl: './work-experience.component.html',
     styleUrls: ['./work-experience.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class WorkExperienceComponent implements OnInit {

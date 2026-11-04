@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ChangeDetectionStrategy} from '@angular/core';
 import {Competency} from '../domain/competency';
 import {ViewportService} from '../../service/viewport.service';
 
@@ -6,6 +6,7 @@ import {ViewportService} from '../../service/viewport.service';
     selector: 'competencies',
     templateUrl: './competencies.component.html',
     styleUrls: ['./competencies.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class CompetenciesComponent implements OnInit {

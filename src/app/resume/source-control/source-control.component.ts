@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
 
 @Component({
     selector: 'source-control',
     templateUrl: './source-control.component.html',
     styleUrls: ['./source-control.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class SourceControlComponent implements OnInit {

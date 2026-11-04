@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
 import {PersonService} from '../service/person.service';
 import {Person} from './domain/person';
 import {ViewportService} from '../service/viewport.service';
@@ -7,6 +7,7 @@ import {ViewportService} from '../service/viewport.service';
     selector: 'resume',
     templateUrl: './resume.component.html',
     styleUrls: ['./resume.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ResumeComponent implements OnInit {

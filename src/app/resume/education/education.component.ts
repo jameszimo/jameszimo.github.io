@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ChangeDetectionStrategy} from '@angular/core';
 import {Education} from '../domain/education';
 import {ViewportService} from '../../service/viewport.service';
 
@@ -6,6 +6,7 @@ import {ViewportService} from '../../service/viewport.service';
     selector: 'education',
     templateUrl: './education.component.html',
     styleUrls: ['./education.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class EducationComponent implements OnInit {

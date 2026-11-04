@@ -1,9 +1,10 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ChangeDetectionStrategy} from '@angular/core';
 
 @Component({
     selector: 'experience',
     templateUrl: './experience.component.html',
     styleUrls: ['./experience.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ExperienceComponent implements OnInit {

@@ -1,10 +1,11 @@
-import {ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, Input, OnInit, ChangeDetectionStrategy} from '@angular/core';
 import {BreakpointNames, ViewportService} from '../../service/viewport.service';
 
 @Component({
     selector: 'banner',
     templateUrl: './banner.component.html',
     styleUrls: ['./banner.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class BannerComponent implements OnInit {
