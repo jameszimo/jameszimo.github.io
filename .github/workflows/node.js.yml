@@ -25,6 +25,7 @@ jobs:
     - name: Test
       run: |
         npm install
+        npx puppeteer browsers install chrome
         npm run test-cloud
 
   Build:
