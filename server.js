@@ -6,7 +6,7 @@ console.log('env: ' + env)
 
 const app = express();
 
-app.get('*', function (req, res, next) {
+app.get('/{*splat}', function (req, res, next) {
 
   if (env !== 'production') {
     next();
@@ -24,7 +24,7 @@ app.get('*', function (req, res, next) {
 });
 
 app.use(express.static(__dirname + '/dist'));
-app.get('/*', function (req, res) {
+app.get('/{*splat}', function (req, res) {
   res.sendFile(path.join(__dirname + '/dist/index.html'));
 });
 
